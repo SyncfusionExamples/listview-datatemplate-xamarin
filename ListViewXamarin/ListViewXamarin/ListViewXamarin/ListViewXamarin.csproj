@@ -1,0 +1,64 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Images\Image0.png" />
+    <EmbeddedResource Include="Images\Image1.png" />
+    <EmbeddedResource Include="Images\Image10.png" />
+    <EmbeddedResource Include="Images\Image11.png" />
+    <EmbeddedResource Include="Images\Image12.png" />
+    <EmbeddedResource Include="Images\Image13.png" />
+    <EmbeddedResource Include="Images\Image14.png" />
+    <EmbeddedResource Include="Images\Image15.png" />
+    <EmbeddedResource Include="Images\Image16.png" />
+    <EmbeddedResource Include="Images\Image17.png" />
+    <EmbeddedResource Include="Images\Image18.png" />
+    <EmbeddedResource Include="Images\Image19.png" />
+    <EmbeddedResource Include="Images\Image2.png" />
+    <EmbeddedResource Include="Images\Image20.png" />
+    <EmbeddedResource Include="Images\Image21.png" />
+    <EmbeddedResource Include="Images\Image22.png" />
+    <EmbeddedResource Include="Images\Image23.png" />
+    <EmbeddedResource Include="Images\Image24.png" />
+    <EmbeddedResource Include="Images\Image25.png" />
+    <EmbeddedResource Include="Images\Image26.png" />
+    <EmbeddedResource Include="Images\Image27.png" />
+    <EmbeddedResource Include="Images\Image28.png" />
+    <EmbeddedResource Include="Images\Image3.png" />
+    <EmbeddedResource Include="Images\Image4.png" />
+    <EmbeddedResource Include="Images\Image5.png" />
+    <EmbeddedResource Include="Images\Image6.png" />
+    <EmbeddedResource Include="Images\Image7.png" />
+    <EmbeddedResource Include="Images\Image8.png" />
+    <EmbeddedResource Include="Images\Image9.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="17.4.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.SfPopupLayout" Version="17.4.0.55" />
+    <PackageReference Include="Xamarin.Forms" Version="4.5.0.396" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\MainPage.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

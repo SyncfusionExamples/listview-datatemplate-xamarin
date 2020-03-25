@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ListViewXamarin"
+             xmlns:sfPopup="clr-namespace:Syncfusion.XForms.PopupLayout;assembly=Syncfusion.SfPopupLayout.XForms"
+             xmlns:sfListView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             x:Class="ListViewXamarin.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:ContactsViewModel x:Name="viewModel"/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Behaviors>
+        <local:ContentPageBehavior/>
+    </ContentPage.Behaviors>
+    
+    <sfPopup:SfPopupLayout x:Name="popupLayout" Margin="{OnPlatform iOS='0,40,0,0'}">
+        <sfPopup:SfPopupLayout.PopupView>
+            <sfPopup:PopupView WidthRequest="350" HeightRequest="350" ShowFooter="False">
+                <sfPopup:PopupView.ContentTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.Behaviors>
+                                <local:GridBehavior/>
+                            </Grid.Behaviors>
+                            
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            
+                            <Button Text="Find ListView" x:Name="listviewButton" BackgroundColor="LightGray"/>
+                            <sfListView:SfListView    x:Name="listView"  ItemSpacing="5" 
+                                                      ItemsSource="{Binding Items}" 
+                                                      SelectionMode="Single" Grid.Row="1">
+                                <sfListView:SfListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <ViewCell.View>
+                                                <Grid x:Name="grid" RowSpacing="1">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*" />
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="50" />
+                                                        <ColumnDefinition Width="*" />
+                                                    </Grid.ColumnDefinitions>
+
+                                                    <Image Source="{Binding ContactImage}"
+                                                       VerticalOptions="Center"
+                                                       HorizontalOptions="Center"
+                                                       HeightRequest="50"/>
+
+                                                    <Label  Grid.Column="1"
+                                                        HorizontalTextAlignment="Center"
+                                                        HorizontalOptions="StartAndExpand"
+                                                        LineBreakMode="NoWrap"
+                                                        Text="{Binding ContactName}" 
+                                                        FontSize="Medium" />
+
+                                                </Grid>
+                                            </ViewCell.View>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </sfListView:SfListView.ItemTemplate>
+                            </sfListView:SfListView>
+                        </Grid>
+                    </DataTemplate>
+                </sfPopup:PopupView.ContentTemplate>
+            </sfPopup:PopupView>
+        </sfPopup:SfPopupLayout.PopupView>
+        <sfPopup:SfPopupLayout.Content>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Button x:Name="ShowPopup" Text="Bring Popup"/>
+            </Grid>
+        </sfPopup:SfPopupLayout.Content>
+    </sfPopup:SfPopupLayout>
+</ContentPage>
