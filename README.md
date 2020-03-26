@@ -2,6 +2,10 @@
 
 You can access the named [SfListView](https://help.syncfusion.com/xamarin/listview/overview?) defined inside [DataTemplate](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/templates/data-templates/) of [PopupLayout](https://help.syncfusion.com/xamarin/listview/overview?) by using [Behavior](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/behaviors/creating).
 
+You can refer the following article for more reference
+
+https://www.syncfusion.com/kb/11287/how-to-access-a-named-listview-inside-a-xaml-datatemplate-in-xamarin-forms-sflistview
+
 **XAML**
 
 In PopupLayout’s [PopupView](https://help.syncfusion.com/cr/xamarin/Syncfusion.SfPopupLayout.XForms~Syncfusion.XForms.PopupLayout.PopupView.html?), behaviour added to parent of ListView.
